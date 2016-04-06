@@ -1,0 +1,8 @@
+{
+  "aws_access_key": "XXXXXXXXXXXXXXXXXXXX",
+  "aws_secret_key": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+  "vpc_id": "vpc-xxxxxxxx",
+  "subnet_id": "subnet-xxxxxxxx",
+  "_source_ami_name_": "primecloud_controller-centos6-hvm-201604060644",
+  "source_ami": "ami-9bcbdbf5"
+}

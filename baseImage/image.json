@@ -1,0 +1,39 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "vpc_id": "",
+    "subnet_id": "",
+    "source_ami": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "ap-northeast-1",
+      "source_ami": "{{user `source_ami`}}",
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "ssh_private_ip": false,
+      "associate_public_ip_address": true,
+      "instance_type": "t2.micro",
+      "ssh_username": "root",
+      "ami_name": " primecloud_controller-centos6-hvm-{{isotime \"200601020304\"}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [ 
+        "yum update -y"
+      ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "../scripts/create_public_image.sh"
+	    ]
+	  }
+  ]
+}
