@@ -4,4 +4,4 @@ packer_cache/
 # For built boxes
 *.box
 
-config.json
+*_config.json
